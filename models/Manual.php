@@ -74,4 +74,8 @@ class Manual extends \yii\db\ActiveRecord
             'update_by' => 'Update By',
         ];
     }
+
+    public function getCreator() {
+        return $this->hasOne(UserDlt::className(), ['id' => 'create_by']);
+    }
 }
