@@ -24,10 +24,10 @@ use frontend\models\PlateForm;
             <?php
             echo \hail812\adminlte3\widgets\Menu::widget([
                 'items' => [
-                    ['label' => 'หน้าแรก', 'url' => ['site/admin'],'icon' => 'tachometer-alt','visible' => Yii::$app->user->identity->role==99],
-                    ['label' => 'หน้าแรก', 'url' => ['site/index'],'icon' => 'tachometer-alt','visible' => Yii::$app->user->identity->role==10],
-                    ['label' => 'รายการแจ้งปัญหา', 'url' => ['/job/index-admin'],'icon' => 'fa fa-list-alt','visible' => Yii::$app->user->identity->role==99],
-                    ['label' => 'รายการแจ้งปัญหา', 'url' => ['/job/index'],'icon' => 'fa fa-list-alt','visible' => Yii::$app->user->identity->role==10],
+                    ['label' => 'หน้าแรก', 'url' => ['site/admin'],'icon' => 'tachometer-alt','visible' => @Yii::$app->user->identity->role==99],
+                    ['label' => 'หน้าแรก', 'url' => ['site/index'],'icon' => 'tachometer-alt','visible' => @Yii::$app->user->identity->role==10],
+                    ['label' => 'รายการแจ้งปัญหา', 'url' => ['/job/index-admin'],'icon' => 'fa fa-list-alt','visible' => @Yii::$app->user->identity->role==99],
+                    ['label' => 'รายการแจ้งปัญหา', 'url' => ['/job/index'],'icon' => 'fa fa-list-alt','visible' =>@Yii::$app->user->identity->role==10],
                     ['label' => 'คู่มือการใช้งาน ต่างๆ', 'url' => ['/manual/index'],'icon' => 'fa fa-book'],
                     [
                         'label' => 'รายงาน',
@@ -48,7 +48,7 @@ use frontend\models\PlateForm;
                             ['label' => 'Line Token', 'url' => ['/line-token/index'], 'iconStyle' => 'far',],
 
                         ],
-                        'visible' => Yii::$app->user->identity->role==99,
+                        'visible' => @Yii::$app->user->identity->role==99,
                     ],
                     [
                         'label' => 'RBAC',

@@ -7,7 +7,7 @@ use yii\helpers\Url;
         <div class="login-logo">
             <a href="<?=Url::home()?>" class="logo text-center"><img alt="" src="<?=Yii::getAlias('@web')?>/statics/img/logo_larg.png" size="100px"> </a>
         </div>
-        <p class="login-box-msg">การควบคุม กำกับดูแลการใช้เครื่องหมายพิเศษ(ป้ายแดง)</p>
+        <p class="login-box-msg">ระบบแจ้งปัญหาการใช้งานระบบงานต่างๆ</p>
 
         <?php $form = \yii\bootstrap4\ActiveForm::begin(['id' => 'login-form']) ?>
 

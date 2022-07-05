@@ -52,7 +52,7 @@ use aekkapun\aws\checkbox\AwesomeCheckbox;
                     <div class="form-group">
                         <br/>
                         <?= Html::submitButton('<i class="fa fa-search" aria-hidden="true"></i> ค้นหา', ['class' => 'btn btn-primary']) ?>
-                        <?= Html::a('<i class="fa fa-undo" aria-hidden="true"></i> ยกเลิก', ['index'], ['class' => 'btn btn-warning']) ?>
+                        <?= Html::a('<i class="fa fa-undo" aria-hidden="true"></i> ยกเลิก', ['index-admin'], ['class' => 'btn btn-warning']) ?>
                     </div>
                 </div>
             </div>

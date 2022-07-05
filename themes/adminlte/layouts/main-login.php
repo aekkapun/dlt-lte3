@@ -8,7 +8,7 @@ use yii\helpers\Url;
 $this->registerCssFile('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700');
 $this->registerCssFile('https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
 \hail812\adminlte3\assets\PluginAsset::register($this)->add(['fontawesome', 'icheck-bootstrap']);
-$this->registerCssFile('@web/css/site.css', ['depends'=>'frontend\assets\AppAsset']);
+$this->registerCssFile('@web/css/site.css', ['depends'=>'app\assets\AppAsset']);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ $this->registerCssFile('@web/css/site.css', ['depends'=>'frontend\assets\AppAsse
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>การควบคุม กำกับดูแลการใช้เครื่องหมายพิเศษ(ป้ายแดง)</title>
+    <title>ระบบแจ้งปัญหาการใช้งานระบบงานต่างๆ</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo Yii::$app->request->baseUrl; ?>/favicon.png" type="image/x-icon" />

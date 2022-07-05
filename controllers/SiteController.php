@@ -29,7 +29,7 @@ class SiteController extends Controller
                 'only' => ['logout'],
                 'rules' => [
                     [
-                        'actions' => ['logout','index'],
+                        'actions' => ['logout','index','admin'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -119,8 +119,7 @@ class SiteController extends Controller
 
       public function actionLogin()
     {
-       // $this->layout='login';
-        $this->layout='loginimg';
+        $this->layout = 'main-login';
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post())) {
             $url  = Config::findOne(['code' => 'A002'])->value;

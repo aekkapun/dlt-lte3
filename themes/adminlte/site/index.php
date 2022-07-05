@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 use yii\helpers\Html;
-$this->title = 'ระบบงานบริหารจัดการ ควบคุม กำกับดูแลการใช้เครื่องหมายพิเศษ(ป้ายแดง) กรมการขนส่งทางบก';
+$this->title = 'ระบบแจ้งปัญหาการใช้งานระบบงานต่างๆ';
 ?>
 <div class="site-index">
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">

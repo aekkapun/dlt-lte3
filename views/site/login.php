@@ -1,51 +1,51 @@
 <?php
-
-/* @var $this yii\web\View */
-/* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \common\models\LoginForm */
-
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
 use yii\helpers\Url;
-
-$this->title = 'ระบบงานบริหารจัดการ ควบคุม กำกับดูแลการใช้เครื่องหมายพิเศษ(ป้ายแดง) กรมการขนส่งทางบก';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
+<div class="card">
+    <div class="card-body login-card-body">
+        <div class="login-logo">
+            <a href="<?=Url::home()?>" class="logo text-center"><img alt="" src="<?=Yii::getAlias('@web')?>/statics/img/logo_larg.png" size="100px"> </a>
+        </div>
+        <p class="login-box-msg">ระบบแจ้งปัญหาการใช้งานระบบงานต่างๆ </p>
 
-<?php $form = ActiveForm::begin([
-    'id' => 'login-form-rpms',
-    'options'=>[
-        'class'=>'form-signin lock-box text-center'
-    ]
-]); ?>
+        <?php $form = \yii\bootstrap4\ActiveForm::begin(['id' => 'login-form']) ?>
 
-<a href="<?=Url::home()?>" class="logo text-center"><img alt="" src="<?=Yii::getAlias('@web')?>/statics/img/logo.png"> </a>
+        <?= $form->field($model,'username', [
+            'options' => ['class' => 'form-group has-feedback'],
+            'inputTemplate' => '{input}<div class="input-group-append"><div class="input-group-text"><span class="fas fa-envelope"></span></div></div>',
+            'template' => '{beginWrapper}{input}{error}{endWrapper}',
+            'wrapperOptions' => ['class' => 'input-group mb-3']
+        ])
+            ->label(false)
+            ->textInput(['placeholder' => $model->getAttributeLabel('username')]) ?>
 
-<div class="login-wrap">
-    <h4 class="text-center" >ระบบงานบริหารจัดการ ควบคุม กำกับดูแลการใช้เครื่องหมายพิเศษ(ป้ายแดง)</h4>
-    <?= $form->field($model, 'username',[
-        'inputOptions' => ['class'=>'form-control', 'placeholder' => 'username'],
-        'inputTemplate' => '<div class="input-group m-bot15">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                {input}
-                            </div>',
-    ])->label(false) ?>
-    <?= $form->field($model, 'password',[
-        'inputOptions' => ['class'=>'form-control', 'placeholder' =>  'password'],
-        'inputTemplate' => '<div class="input-group m-bot15">
-                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                                {input}
-                            </div>',
-    ])->passwordInput()->label(false) ?>
+        <?= $form->field($model, 'password', [
+            'options' => ['class' => 'form-group has-feedback'],
+            'inputTemplate' => '{input}<div class="input-group-append"><div class="input-group-text"><span class="fas fa-lock"></span></div></div>',
+            'template' => '{beginWrapper}{input}{error}{endWrapper}',
+            'wrapperOptions' => ['class' => 'input-group mb-3']
+        ])
+            ->label(false)
+            ->passwordInput(['placeholder' => $model->getAttributeLabel('password')]) ?>
 
-    <?= $form->field($model, 'rememberMe',[
-        'inputTemplate'=>'{input}',
-        'options' => [
-        ],
-    ])->checkbox() ?>
+        <div class="row">
+            <div class="col-8">
+                <?= $form->field($model, 'rememberMe')->checkbox([
+                    'template' => '<div class="icheck-primary">{input}{label}</div>',
+                    'labelOptions' => [
+                        'class' => ''
+                    ],
+                    'uncheck' => null
+                ]) ?>
+            </div>
+            <div class="col-4">
+                <?= Html::submitButton('เข้าสู่ระบบ', ['class' => 'btn btn-primary btn-block']) ?>
+            </div>
+        </div>
 
-    <?= Html::submitButton('เข้าสู่ระบบ', ['class' => 'btn btn-lg btn-login btn-block  btn-primary', 'name' => 'login-button']) ?>
+        <?php \yii\bootstrap4\ActiveForm::end(); ?>
+        <!-- /.social-auth-links -->
+    </div>
+    <!-- /.login-card-body -->
 </div>
-<?php ActiveForm::end(); ?>
-
-
